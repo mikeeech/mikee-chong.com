@@ -153,7 +153,7 @@ const Navbar = () => {
                   </div>
                 </a>
                 <a
-                  href="mailto:chongmikee1017@hotmail.com"
+                  href="mailto:hello@mikee-chong.com"
                   target="_blank"
                   title="GitHub"
                   rel="noreferrer noopener"
