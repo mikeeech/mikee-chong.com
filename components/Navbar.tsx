@@ -1,11 +1,11 @@
-'use client';
-import '../app/globals.css';
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { useRouter } from 'next/router';
+"use client";
+import "../app/globals.css";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { BsFillPersonLinesFill } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   // const router = useRouter();
@@ -20,7 +20,7 @@ const Navbar = () => {
         setShadow(false);
       }
     };
-    window.addEventListener('scroll', handleShadow);
+    window.addEventListener("scroll", handleShadow);
   }, []);
   const handleNav = () => {
     setNav(!nav);
@@ -30,8 +30,8 @@ const Navbar = () => {
     <div
       className={
         shadow
-          ? 'fixed w-full shadow-xl h-20 z-[100] bg-[#FFEA75]'
-          : 'fixed w-full h-20 z-[100] bg-[#FFEA75]'
+          ? "fixed w-full shadow-xl h-20 z-[100] bg-[#FFEA75]"
+          : "fixed w-full h-20 z-[100] bg-[#FFEA75]"
       }
     >
       <div className="flex justify-between items-center w-full h-full ml-5 px-2 2xl:px16">
@@ -62,14 +62,14 @@ const Navbar = () => {
 
       <div
         className={
-          nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''
+          nav ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/70" : ""
         }
       >
         <div
           className={
             nav
-              ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md-w[45%] h-screen bg-[#FFEA75] p-10 ease-in duration-500'
-              : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
+              ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md-w[45%] h-screen bg-[#FFEA75] p-10 ease-in duration-500"
+              : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
           }
         >
           <div>
