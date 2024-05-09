@@ -11,13 +11,10 @@ const Main = () => {
   return (
     <main id="main">
       <Navbar />
-      <div className="mx-auto mb-12 pt-20 max-w-screen-lg text-center relative fixed-page z-0">
+      <div className="mx-auto mb-12 pt-20 max-w-screen-sm relative fixed-page  z-0">
         <div className="max-w-[1240px] w-full h-full flex justify-center items-center">
           <div>
-            <div className="pb-1 pt-5">
-              <h1 className="font-honk">Welcome to my page!</h1>
-            </div>
-            <div className="py-8 flex justify-center">
+            <div className="py-5 flex justify-center pt-20">
               <Image
                 src="/assets/profile.jpg"
                 alt="Photo of Mikee"
@@ -25,9 +22,10 @@ const Main = () => {
                 height={230}
                 className="rounded-full"
               />
-              {/* TODO: find better pic */}
             </div>
+            <div className='text-left pl-10'>
             <Markdown content={markdown} />
+            </div>
           </div>
         </div>
       </div>

@@ -34,19 +34,19 @@ const Skills = () => {
 
   const renderSkills = (category: string, categorySkills: Skill[]) => (
     <div className="flex flex-col">
-      <h3 className="uppercase tracking-widest pt-10 pb-5">{category}</h3>
-      <div className="grid lg:grid-cols-6 gap-4">
+      <h3 className="uppercase tracking-widest pt-10 pb-5 text-black">{category}</h3>
+      <div className="grid lg:grid-cols-10 gap-4 justify-center items-center">
         {categorySkills.map((skill, index) => (
           <div
             key={index}
-            className="p-2 shadow-xl rounded-xl hover:scale-105 ease-in duration-300"
+            className="p-2 bg-[#ffed84] shadow-xl rounded-xl"
           >
-            <div className="grid grid-cols-2 gap-2 justify-center items-center">
-              <div className="m-auto">
-                <Image src={skill.src} width="64" height="64" alt="/" />
+            <div className="grid justify-center items-center"> 
+              <div className='flex flex-col items-center justify-center'>
+              <Image src={skill.src} width="40" height="40" alt="/"/>
               </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3>{skill.name}</h3>
+              <div className="flex flex-col items-center justify-center text-center">
+                <p>{skill.name}</p>
               </div>
             </div>
           </div>
@@ -60,9 +60,9 @@ const Skills = () => {
   );
   const frameworkSkills = skills.filter(
     (skill) =>
-      skill.name === '.NET' ||
       skill.name === 'React' ||
-      skill.name === 'Next.js'
+      skill.name === 'Next.js' ||
+      skill.name === '.NET Core'
   );
   const languageSkills = skills.filter(
     (skill) =>
@@ -92,13 +92,13 @@ const Skills = () => {
   );
 
   return (
-    <div id="skills" className="h-auto">
+    <div id="skills">
       <div className="max-w-[1240px] mx-auto flex flex-col justify-center py-10">
-        <h2 className="uppercase tracking-widest py-7">Skills</h2>
+        <h2 className="uppercase tracking-widest">Skills</h2>
         {renderSkills('Cloud', cloudSkills)}
         {renderSkills('Frameworks', frameworkSkills)}
         {renderSkills('Languages', languageSkills)}
-        {renderSkills('Tools', toolSkills)}
+        {/* {renderSkills('Tools', toolSkills)} */}
         {renderSkills('Data', dataSkills)}
       </div>
     </div>

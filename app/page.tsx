@@ -11,11 +11,11 @@ export default function Home() {
       <Head>
         <title>Mikee Chong</title>
       </Head>
-      <Main />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+        <Main />
+        <About />
+        <Skills />
+        {/* <Projects /> */}
+        <Contact />
     </div>
   );
 }

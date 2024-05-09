@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Honk:MORF,SHLN@0..45,0..100&family=Inter:wght@100..900&family=Lilita+One&family=PT+Mono&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Angkor&family=Averia+Serif+Libre:wght@400;700&family=Calistoga&family=Concert+One&family=Homemade+Apple&family=Honk:MORF,SHLN@0..45,0..100&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lilita+One&family=PT+Mono&family=Righteous&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Suez+One&family=Vidaloka&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +8,7 @@ html {
 }
 
 :root {
-  --nav-bg: #FFF59D;
+  --nav-bg: #FFEA75;
 }
 
 .navbar {
@@ -16,37 +16,47 @@ html {
 }
 
 .shadow {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 2px 4px rgb(157, 104, 5);
 }
 
-@layer base {
-  body {
-    @apply bg-yellow-200 text-[#93234E] tracking-wide;
-  }
+body {
+  @apply bg-[#FFEA75] text-[#86305a] tracking-wide;
+}
 
-  h1,
-  h2,
-  h3 {
-    @apply font-lilita;
-  }
+h1,
+h2,
+h3 {
+  @apply font-ibmplex font-extrabold;
+}
 
-  h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl;
-  }
+h1 {
+  @apply text-4xl sm:text-5xl md:text-6xl;
+}
 
-  h2 {
-    @apply text-3xl sm:text-4xl;
-  }
+h2 {
+  @apply text-3xl sm:text-4xl;
+}
 
-  li {
-    @apply cursor-pointer;
-  }
+li {
+  @apply cursor-pointer;
+}
 
-  button {
-    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white;
-  }
+button {
+  @apply shadow-xl rounded-full uppercase bg-black text-white font-lilita;
+}
 
-  p {
-    @apply font-roboto text-[#6C0931]
-  }
+input {
+  @apply border-2 border-black rounded-3xl p-3 flex;
+}
+
+textarea {
+  @apply border-2 border-black rounded-3xl p-3 flex;
+}
+
+label {
+  @apply uppercase text-xs py-2 text-black font-light;
+}
+
+p {
+  @apply font-thin text-black;
 }

@@ -30,27 +30,27 @@ const Navbar = () => {
     <div
       className={
         shadow
-          ? 'fixed w-full shadow-xl h-20 z-[100] bg-[#FFF282]'
-          : 'fixed w-full h-20 z-[100] bg-[#FFF282]'
+          ? 'fixed w-full shadow-xl h-20 z-[100] bg-[#FFEA75]'
+          : 'fixed w-full h-20 z-[100] bg-[#FFEA75]'
       }
     >
       <div className="flex justify-between items-center w-full h-full ml-5 px-2 2xl:px16">
         <h2>mikee-chong</h2>
         <div>
           <ul className="hidden md:flex font-sometype-mono mr-5">
-            <li className="ml-10 text-sm uppercase hover:border-b border-[#93234E]">
+            <li className="ml-10 text-sm uppercase hover:border-b border-[#86305a]">
               <Link href="/">Home</Link>
             </li>
-            <li className="ml-10 text-sm uppercase hover:border-b border-[#93234E]">
+            <li className="ml-10 text-sm uppercase hover:border-b border-[#86305a]">
               <Link href="/#about">About</Link>
             </li>
-            <li className="ml-10 text-sm uppercase hover:border-b border-[#93234E]">
+            <li className="ml-10 text-sm uppercase hover:border-b border-[#86305a]">
               <Link href="/#skills">Skills</Link>
             </li>
-            <li className="ml-10 text-sm uppercase hover:border-b border-[#93234E]">
+            <li className="ml-10 text-sm uppercase hover:border-b border-[#86305a]">
               <Link href="/#projects">Projects</Link>
             </li>
-            <li className="ml-10 mr-5 text-sm uppercase hover:border-b border-[#93234E]">
+            <li className="ml-10 mr-5 text-sm uppercase hover:border-b border-[#86305a]">
               <Link href="/#contact">Contact</Link>
             </li>
           </ul>
@@ -68,7 +68,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md-w[45%] h-screen bg-yellow-200 p-10 ease-in duration-500'
+              ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md-w[45%] h-screen bg-[#FFEA75] p-10 ease-in duration-500'
               : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
           }
         >
@@ -82,7 +82,7 @@ const Navbar = () => {
                 <AiOutlineClose />
               </div>
             </div>
-            <div className="pt-5 border-b border-[#93234E] my-4"></div>
+            <div className="pt-5 border-b border-[#86305a] my-4"></div>
           </div>
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
