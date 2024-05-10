@@ -9,7 +9,7 @@ const About = () => {
   const markdown = fs.readFileSync(markdownPath, 'utf-8');
 
   return (
-    <div id="about" className="w-full md:h-screen flex items-center px-15">
+    <div id="about" className="w-full md:h-screen flex items-center px-20">
       <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
         <div className="col-span-2">
           <h1 className="uppercase tracking-widest py-7">About me</h1>
