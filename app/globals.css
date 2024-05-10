@@ -54,7 +54,7 @@ textarea {
 }
 
 label {
-  @apply uppercase text-xs py-2 text-black font-light;
+  @apply uppercase text-xs py-2 text-black;
 }
 
 p {

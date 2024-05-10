@@ -9,21 +9,22 @@ const About = () => {
   const markdown = fs.readFileSync(markdownPath, 'utf-8');
 
   return (
-    <div id="about" className="w-full md:h-screen flex items-center px-20">
-      <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
-        <div className="col-span-2">
-          <h1 className="uppercase tracking-widest py-7">About me</h1>
-          <Markdown content={markdown} />
-        </div>
-        <div className="w-full h-auto m-auto shadow-l rounded-xl flex items-center justify-center p-4">
-          <Image
-            className="rounded-xl"
-            src="/assets/about.jpg"
-            width={300}
-            height={500}
-            alt="/"
-          />
-        </div>
+    <div
+      id='about'
+      className='flex w-full items-center px-20 pb-10 md:h-screen'
+    >
+      <div className='col-span-2'>
+        <h1 className='py-7 uppercase tracking-widest'>About me</h1>
+        <Markdown content={markdown} />
+      </div>
+      <div className='shadow-l m-auto flex h-auto w-full items-center justify-center rounded-xl p-4'>
+        <Image
+          className='rounded-xl'
+          src='/assets/about.jpg'
+          width={300}
+          height={500}
+          alt='/'
+        />
       </div>
     </div>
   );

@@ -33,19 +33,18 @@ const Skills = () => {
   ];
 
   const renderSkills = (category: string, categorySkills: Skill[]) => (
-    <div className="flex flex-col">
-      <h3 className="uppercase tracking-widest pt-10 pb-5 text-black">{category}</h3>
-      <div className="grid lg:grid-cols-10 gap-4 justify-center items-center">
+    <div className='flex flex-col'>
+      <h3 className='pb-5 pt-10 uppercase tracking-widest text-black'>
+        {category}
+      </h3>
+      <div className='grid items-center justify-center gap-4 lg:grid-cols-10'>
         {categorySkills.map((skill, index) => (
-          <div
-            key={index}
-            className="p-2 bg-[#ffed84] shadow-xl rounded-xl"
-          >
-            <div className="grid justify-center items-center"> 
+          <div key={index} className='rounded-xl bg-[#ffed84] p-2 shadow-xl'>
+            <div className='grid items-center justify-center'>
               <div className='flex flex-col items-center justify-center'>
-              <Image src={skill.src} width="40" height="40" alt="/"/>
+                <Image src={skill.src} width='40' height='40' alt='/' />
               </div>
-              <div className="flex flex-col items-center justify-center text-center">
+              <div className='flex flex-col items-center justify-center text-center'>
                 <p>{skill.name}</p>
               </div>
             </div>
@@ -92,15 +91,13 @@ const Skills = () => {
   );
 
   return (
-    <div id="skills">
-      <div className="max-w-[1240px] mx-auto flex flex-col justify-center py-10 px-20">
-        <h1 className="uppercase tracking-widest">Skills</h1>
-        {renderSkills('Cloud', cloudSkills)}
-        {renderSkills('Frameworks', frameworkSkills)}
-        {renderSkills('Languages', languageSkills)}
-        {/* {renderSkills('Tools', toolSkills)} */}
-        {renderSkills('Data', dataSkills)}
-      </div>
+    <div id='skills' className='mx-auto flex-col justify-center px-20 py-10'>
+      <h1 className='uppercase tracking-widest'>Skills</h1>
+      {renderSkills('Cloud', cloudSkills)}
+      {renderSkills('Frameworks', frameworkSkills)}
+      {renderSkills('Languages', languageSkills)}
+      {/* {renderSkills('Tools', toolSkills)} */}
+      {renderSkills('Data', dataSkills)}
     </div>
   );
 };
