@@ -9,9 +9,9 @@ import Footer from "../components/Footer";
 
 const Contact = () => {
   return (
-    <div id="contact" className="w-full lg:h-screen">
+    <div id="contact" className="w-full lg:h-screen px-5">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
-        <h2 className="uppercase tracking-widest py-7">Contact</h2>
+        <h1 className="uppercase tracking-widest py-7">Contact</h1>
         <div className="grid lg:grid-cols-5 gap-8 pb-12">
           {/* left side */}
           <div className="col-span-3 lg:col-span-2 w-full h-full rounded-xl p-5">

@@ -93,8 +93,8 @@ const Skills = () => {
 
   return (
     <div id="skills">
-      <div className="max-w-[1240px] mx-auto flex flex-col justify-center py-10">
-        <h2 className="uppercase tracking-widest">Skills</h2>
+      <div className="max-w-[1240px] mx-auto flex flex-col justify-center py-10 px-5">
+        <h1 className="uppercase tracking-widest">Skills</h1>
         {renderSkills('Cloud', cloudSkills)}
         {renderSkills('Frameworks', frameworkSkills)}
         {renderSkills('Languages', languageSkills)}
