@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 
 const Contact = () => {
   return (
-    <div id="contact" className="w-full lg:h-screen px-5">
+    <div id="contact" className="w-full lg:h-screen px-20">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
         <h1 className="uppercase tracking-widest py-7">Contact</h1>
         <div className="grid lg:grid-cols-5 gap-8 pb-12">
