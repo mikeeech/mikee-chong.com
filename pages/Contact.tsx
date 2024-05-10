@@ -14,7 +14,7 @@ const Contact = () => {
         <h1 className="uppercase tracking-widest py-7">Contact</h1>
         <div className="grid lg:grid-cols-5 gap-8 pb-12">
           {/* left side */}
-          <div className="col-span-3 lg:col-span-2 w-full h-full rounded-xl p-5">
+          <div className="col-span-3 lg:col-span-2 w-full h-full rounded-xl p-15">
             <div className="lg:p-4 h-full">
               <div>
                 <Image

@@ -3,7 +3,7 @@ import ProjectItem from '../components/ProjectItem';
 
 const Projects = () => {
   return (
-    <div id="projects" className="w-full px-5">
+    <div id="projects" className="w-full px-15">
       <div className="max-w-[1240px] mx-auto px-2 py-16">
         <h1 className="uppercase tracking-widest py-7">Projects: STAY TUNED FOR MORE</h1>
         <p className="text-l tracking-widest uppercase text-[#FFEA75]">
