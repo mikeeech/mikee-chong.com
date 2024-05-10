@@ -9,22 +9,22 @@ const Main = () => {
   const markdown = fs.readFileSync(markdownPath, 'utf-8');
 
   return (
-    <main id="main">
+    <main id='main'>
       <Navbar />
-      <div className="mx-auto mb-12 pt-20 max-w-screen-sm relative fixed-page  z-0">
-        <div className="max-w-[1240px] w-full h-full flex justify-center items-center">
+      <div className='fixed-page relative z-0 mx-auto max-w-screen-sm pt-10'>
+        <div className='flex h-full w-full max-w-[1240px] items-center justify-center'>
           <div>
-            <div className="py-5 flex justify-center pt-20">
+            <div className='flex justify-center py-5 pt-20'>
               <Image
-                src="/assets/profile.jpg"
-                alt="Photo of Mikee"
+                src='/assets/profile.jpg'
+                alt='Photo of Mikee'
                 width={230}
                 height={230}
-                className="rounded-full"
+                className='rounded-full'
               />
             </div>
-            <div className='text-left pl-10'>
-            <Markdown content={markdown} />
+            <div className='pl-10 text-left'>
+              <Markdown content={markdown} />
             </div>
           </div>
         </div>

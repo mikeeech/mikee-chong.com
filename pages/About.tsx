@@ -9,15 +9,12 @@ const About = () => {
   const markdown = fs.readFileSync(markdownPath, 'utf-8');
 
   return (
-    <div
-      id='about'
-      className='flex w-full items-center px-20 pb-10 md:h-screen'
-    >
+    <div id='about' className='flex w-full items-center px-20 md:h-screen'>
       <div className='col-span-2'>
         <h1 className='py-7 uppercase tracking-widest'>About me</h1>
         <Markdown content={markdown} />
       </div>
-      <div className='shadow-l m-auto flex h-auto w-full items-center justify-center rounded-xl p-4'>
+      <div className='m-auto flex h-auto w-full items-center justify-center rounded-xl p-4'>
         <Image
           className='rounded-xl'
           src='/assets/about.jpg'
