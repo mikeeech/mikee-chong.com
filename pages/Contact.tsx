@@ -14,7 +14,7 @@ const Contact = () => {
         {/* left side */}
         <div className='display:flex col-span-3 h-full w-full rounded-xl p-3 lg:col-span-2'>
           <Image
-            className='rounded-full'
+            className='border-10 rounded-full border border-black'
             src='/assets/contact.jpg'
             width={230}
             height={230}

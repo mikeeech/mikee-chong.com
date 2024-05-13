@@ -14,16 +14,16 @@ const Main = () => {
       <div className='fixed-page relative z-0 mx-auto max-w-screen-sm pt-10'>
         <div className='flex h-full w-full max-w-[1240px] items-center justify-center'>
           <div>
-            <div className='flex justify-center py-5 pt-20'>
+            <div className='flex justify-center pb-12 pt-20'>
               <Image
                 src='/assets/profile.jpg'
                 alt='Photo of Mikee'
                 width={230}
                 height={230}
-                className='rounded-full'
+                className='border-50 rounded-full'
               />
             </div>
-            <div className='pl-10 text-left'>
+            <div className='pl-20 text-left'>
               <Markdown content={markdown} />
             </div>
           </div>
