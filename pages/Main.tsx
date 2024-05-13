@@ -23,7 +23,7 @@ const Main = () => {
                 className='border-50 rounded-full'
               />
             </div>
-            <div className='pl-20 text-left'>
+            <div className='pl-20 pr-12 text-left'>
               <Markdown content={markdown} />
             </div>
           </div>
