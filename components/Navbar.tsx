@@ -1,10 +1,9 @@
 'use client';
-import '../app/globals.css';
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -45,11 +44,14 @@ const Navbar = () => {
             <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
               <Link href='/#skills'>Skills</Link>
             </li>
-            {/* <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
+            <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
               <Link href='/#projects'>Projects</Link>
-            </li> */}
+            </li>
             <li className='ml-10 mr-5 text-sm uppercase hover:border-b border-[#86305a]'>
               <Link href='/#contact'>Contact</Link>
+            </li>
+            <li className='ml-10 mr-5 text-sm uppercase hover:border-b border-[#86305a]'>
+              <Link href='/#'>CV</Link>
             </li>
           </ul>
           <div onClick={handleNav} className='md:hidden pr-10'>
@@ -122,6 +124,14 @@ const Navbar = () => {
                   className='py-4 text-sm font-sometype-mono'
                 >
                   Contacts
+                </li>
+              </Link>
+              <Link href='/#'>
+                <li
+                  onClick={() => setNav(false)}
+                  className='py-4 text-sm font-sometype-mono'
+                >
+                  CV
                 </li>
               </Link>
             </ul>

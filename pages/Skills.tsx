@@ -1,5 +1,5 @@
+import Heading from '@/components/Heading';
 import Image from 'next/image';
-import React from 'react';
 
 interface Skill {
   name: string;
@@ -91,8 +91,8 @@ const Skills = () => {
   );
 
   return (
-    <div id='skills' className='mx-auto flex-col justify-center px-20 py-10'>
-      <h1 className='uppercase tracking-widest'>Skills</h1>
+    <div id='skills' className='flex mx-auto flex-col justify-center px-20 py-10'>
+      <Heading title='Skills' />
       {renderSkills('Cloud', cloudSkills)}
       {renderSkills('Frameworks', frameworkSkills)}
       {renderSkills('Languages', languageSkills)}

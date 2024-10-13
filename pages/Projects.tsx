@@ -1,14 +1,11 @@
-import React from 'react';
-import ProjectItem from '../components/ProjectItem';
+import Heading from '@/components/Heading';
+import ProjectItem from '@/components/ProjectItem';
 
 const Projects = () => {
   return (
     <div id="projects" className="w-full">
       <div className="max-w-[1240px] mx-auto py-16 px-20">
-        <h1 className="uppercase tracking-widest py-7">Projects: STAY TUNED FOR MORE</h1>
-        <p className="text-l tracking-widest uppercase text-[#FFEA75]">
-          STAY TUNED FOR MY PROJECTS
-        </p>
+        <Heading title='Projects: STAY TUNED FOR MORE'/>
         <div className="grid md:grid-cols-2 gap-8">
           <ProjectItem
             title="Property Finder"
