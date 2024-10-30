@@ -11,7 +11,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleShadow = () => {
-      if (window.scrollY >= 90) {
+      if (window.scrollY >= 20) {
         setShadow(true);
       } else {
         setShadow(false);
@@ -39,19 +39,19 @@ const Navbar = () => {
               <Link href='/'>Home</Link>
             </li>
             <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
-              <Link href='/#about'>About</Link>
+              <Link href='/about'>About</Link>
+            </li>
+            {/* <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
+              <Link href='/skills'>Skills</Link>
+            </li> */}
+            <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
+              <Link href='/projects'>Projects</Link>
             </li>
             <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
-              <Link href='/#skills'>Skills</Link>
-            </li>
-            <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
-              <Link href='/#projects'>Projects</Link>
+              <Link href='/research'>Research</Link>
             </li>
             <li className='ml-10 mr-5 text-sm uppercase hover:border-b border-[#86305a]'>
-              <Link href='/#contact'>Contact</Link>
-            </li>
-            <li className='ml-10 mr-5 text-sm uppercase hover:border-b border-[#86305a]'>
-              <Link href='/#'>CV</Link>
+              <Link href='/contact'>Contact</Link>
             </li>
           </ul>
           <div onClick={handleNav} className='md:hidden pr-10'>
@@ -94,7 +94,7 @@ const Navbar = () => {
                   Home
                 </li>
               </Link>
-              <Link href='/#about'>
+              <Link href='/about'>
                 <li
                   onClick={() => setNav(false)}
                   className='py-4 text-sm font-sometype-mono'
@@ -102,15 +102,15 @@ const Navbar = () => {
                   About
                 </li>
               </Link>
-              <Link href='/#skills'>
+              {/* <Link href='/skills'>
                 <li
                   onClick={() => setNav(false)}
                   className='py-4 text-sm font-sometype-mono'
                 >
                   Skills
                 </li>
-              </Link>
-              <Link href='/#projects'>
+              </Link> */}
+              <Link href='/projects'>
                 <li
                   onClick={() => setNav(false)}
                   className='py-4 text-sm font-sometype-mono'
@@ -118,20 +118,20 @@ const Navbar = () => {
                   Projects
                 </li>
               </Link>
-              <Link href='/#contacts'>
+              <Link href='/research'>
                 <li
                   onClick={() => setNav(false)}
                   className='py-4 text-sm font-sometype-mono'
                 >
-                  Contacts
+                  Research
                 </li>
               </Link>
-              <Link href='/#'>
+              <Link href='/contact'>
                 <li
                   onClick={() => setNav(false)}
                   className='py-4 text-sm font-sometype-mono'
                 >
-                  CV
+                  Contact
                 </li>
               </Link>
             </ul>

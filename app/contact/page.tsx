@@ -1,15 +1,13 @@
-import React from 'react';
-import Image from 'next/image';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
-import Link from 'next/link';
-import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
-import Footer from '../components/Footer';
+import Image from 'next/image';
+import Heading from '@/components/Heading';
 
 const Contact = () => {
   return (
-    <div id='contact' className='w-full px-20 pt-20 lg:h-screen'>
-      <h1 className='py-7 uppercase tracking-widest'>Contact</h1>
+    <>
+    <div className='w-full px-20 pt-20 md:h-screen'>
+      <Heading title='Contact Me'/>
       <div className='grid gap-8 pb-12 lg:grid-cols-5'>
         {/* left side */}
         <div className='display:flex col-span-3 h-full w-full rounded-xl p-3 lg:col-span-2'>
@@ -93,15 +91,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className='flex justify-center pb-5 pt-12'>
-        <Link href='/'>
-          <div className='cursor-pointer rounded-full p-4 shadow-lg duration-300 ease-in hover:scale-110'>
-            <HiOutlineChevronDoubleUp size={30} className='text-[#86305a]' />
-          </div>
-        </Link>
-      </div>
-      <Footer />
     </div>
+    </>
   );
 };
 

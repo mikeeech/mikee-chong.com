@@ -8,7 +8,6 @@ import remarkToc from "remark-toc";
 export default function Markdown({ content }: { content: string }) {
   return (
     <ReactMarkdown
-      className="py-5"
       remarkPlugins={[remarkFormatter, remarkMdxFormatter, remarkToc]}
       rehypePlugins={[
         rehypeSlug,
