@@ -32,7 +32,11 @@ const Navbar = () => {
       }
     >
       <div className='flex justify-between items-center w-full h-full ml-5 px-2 2xl:px16'>
-        <h2>mikee-chong</h2>
+      <h2>
+        <Link href="/">
+          mikee-chong
+        </Link>
+      </h2>
         <div>
           <ul className='hidden md:flex font-sometype-mono mr-5'>
             <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
@@ -41,9 +45,6 @@ const Navbar = () => {
             <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
               <Link href='/about'>About</Link>
             </li>
-            {/* <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
-              <Link href='/skills'>Skills</Link>
-            </li> */}
             <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
               <Link href='/projects'>Projects</Link>
             </li>
@@ -102,14 +103,6 @@ const Navbar = () => {
                   About
                 </li>
               </Link>
-              {/* <Link href='/skills'>
-                <li
-                  onClick={() => setNav(false)}
-                  className='py-4 text-sm font-sometype-mono'
-                >
-                  Skills
-                </li>
-              </Link> */}
               <Link href='/projects'>
                 <li
                   onClick={() => setNav(false)}

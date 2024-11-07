@@ -1,13 +1,10 @@
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
 import Image from 'next/image';
-import Heading from '@/components/Heading';
 
 const Contact = () => {
   return (
-    <>
-    <div className='w-full px-20 pt-20 md:h-screen'>
-      <Heading title='Contact Me'/>
+    <div className='w-full px-20 pt-32 md:h-screen'>
       <div className='grid gap-8 pb-12 lg:grid-cols-5'>
         {/* left side */}
         <div className='display:flex col-span-3 h-full w-full rounded-xl p-3 lg:col-span-2'>
@@ -92,7 +89,6 @@ const Contact = () => {
         </div>
       </div>
     </div>
-    </>
   );
 };
 

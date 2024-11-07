@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import './globals.css';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import './global.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mikee-chong.com'),
@@ -29,9 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>
-        <Navbar/>
-        {children}
+      <body className='h-screen flex flex-col overflow-hidden'>
+        <Navbar />
+        <main className='flex-1 overflow-y-auto'>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

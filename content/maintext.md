@@ -1,5 +1,3 @@
-### Hi There! 👋
-\
 I am a **London-based Software Engineer** from **Hong Kong 🇭🇰**
 \
 Keep scrolling to learn more about me!

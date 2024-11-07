@@ -1,9 +1,8 @@
 export default function Footer() {
   return (
-    <div className='flex justify-center py-3 items-center text-black'>
-      <p className='text-[10px] text-black'>
-        Built from scratch using Next.js and Tailwind CSS.
-        <br />
+    <div className='flex items-center justify-center px-10 py-3 text-black'>
+      <p className='text-[8px] text-black'>
+        Built from scratch using Next.js and Tailwind CSS. {''}
         Check out the source code on {''}
         <a
           target='_blank'
