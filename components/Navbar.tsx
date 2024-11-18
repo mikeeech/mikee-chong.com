@@ -4,174 +4,141 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import Link from 'next/link';
+import clsx from 'clsx';
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
-  const [shadow, setShadow] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isShadowVisible, setIsShadowVisible] = useState(false);
 
   useEffect(() => {
-    const handleShadow = () => {
-      if (window.scrollY >= 20) {
-        setShadow(true);
-      } else {
-        setShadow(false);
-      }
+    const handleScroll = () => {
+      setIsShadowVisible(window.scrollY >= 50);
     };
-    window.addEventListener('scroll', handleShadow);
-    return () => {
-      window.removeEventListener('scroll', handleShadow);
-    };
-  }, [window]);
-  const handleNav = () => {
-    setNav(!nav);
-  };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleNav = () => setIsNavOpen(!isNavOpen);
+
+  const closeNav = () => setIsNavOpen(false);
+
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/research', label: 'Research' },
+    { href: '/contact', label: 'Contact' },
+  ];
 
   return (
     <div
-      className={
-        shadow
-          ? 'fixed z-[100] h-20 w-full bg-[#FFEA75] shadow-xl'
-          : 'fixed z-[100] h-20 w-full bg-[#FFEA75]'
-      }
+      className={clsx(
+        'fixed z-[100] h-20 w-full bg-[#FFEA75] transition-shadow duration-300',
+        { 'shadow-xl': isShadowVisible }
+      )}
     >
       <div className='2xl:px16 ml-5 flex h-full w-full items-center justify-between px-2'>
         <h2>
           <Link href='/'>mikee-chong</Link>
         </h2>
         <div>
+          {/* desktop navbar */}
           <ul className='mr-5 hidden font-sometype-mono md:flex'>
-            <li className='ml-10 border-[#86305a] text-sm uppercase hover:border-b'>
-              <Link href='/'>Home</Link>
-            </li>
-            <li className='ml-10 border-[#86305a] text-sm uppercase hover:border-b'>
-              <Link href='/about'>About</Link>
-            </li>
-            <li className='ml-10 border-[#86305a] text-sm uppercase hover:border-b'>
-              <Link href='/projects'>Projects</Link>
-            </li>
-            <li className='ml-10 border-[#86305a] text-sm uppercase hover:border-b'>
-              <Link href='/research'>Research</Link>
-            </li>
-            <li className='ml-10 mr-5 border-[#86305a] text-sm uppercase hover:border-b'>
-              <Link href='/contact'>Contact</Link>
-            </li>
+            {navLinks.map((link) => (
+              <li
+                key={link.href}
+                className='ml-10 border-[#86305a] text-sm uppercase hover:border-b'
+              >
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
           </ul>
-          <div onClick={handleNav} className='pr-10 md:hidden'>
+
+          {/* mobile menu icon */}
+          <div
+            onClick={toggleNav}
+            className='pr-10 md:hidden'
+            aria-label='Toggle navigation menu'
+          >
             <AiOutlineMenu size={25} />
           </div>
         </div>
       </div>
 
-      <div
-        className={
-          nav ? 'fixed left-0 top-0 h-screen w-full bg-black/70 md:hidden' : ''
-        }
-      >
-        <div
-          className={
-            nav
-              ? 'md-w[45%] fixed left-0 top-0 h-screen w-[75%] bg-[#FFEA75] p-10 duration-500 ease-in sm:w-[60%]'
-              : 'fixed left-[-100%] top-0 p-10 duration-500 ease-in'
-          }
-        >
-          <div>
+      {/* mobile navbar */}
+      {isNavOpen && (
+        <div className='fixed left-0 top-0 h-screen w-full bg-black/70 md:hidden'>
+          <div className='fixed left-0 top-0 h-screen w-[75%] bg-[#FFEA75] p-10 duration-500 ease-in sm:w-[60%]'>
             <div className='flex w-full items-center justify-between'>
               <h2>mikee-chong</h2>
               <div
-                onClick={handleNav}
+                onClick={closeNav}
                 className='cursor-pointer rounded-full p-3 shadow-lg'
+                aria-label='Close navigation menu'
               >
                 <AiOutlineClose />
               </div>
             </div>
             <div className='my-4 border-b border-[#86305a] pt-5'></div>
-          </div>
-          <div className='flex flex-col py-4'>
-            <ul className='uppercase'>
-              <Link href='/'>
+
+            {/* mobile nav links */}
+            <ul className='flex flex-col uppercase'>
+              {navLinks.map((link) => (
                 <li
-                  onClick={() => setNav(false)}
+                  key={link.href}
+                  onClick={closeNav}
                   className='py-4 font-sometype-mono text-sm'
                 >
-                  Home
+                  <Link href={link.href}>{link.label}</Link>
                 </li>
-              </Link>
-              <Link href='/about'>
-                <li
-                  onClick={() => setNav(false)}
-                  className='py-4 font-sometype-mono text-sm'
-                >
-                  About
-                </li>
-              </Link>
-              <Link href='/projects'>
-                <li
-                  onClick={() => setNav(false)}
-                  className='py-4 font-sometype-mono text-sm'
-                >
-                  Projects
-                </li>
-              </Link>
-              <Link href='/research'>
-                <li
-                  onClick={() => setNav(false)}
-                  className='py-4 font-sometype-mono text-sm'
-                >
-                  Research
-                </li>
-              </Link>
-              <Link href='/contact'>
-                <li
-                  onClick={() => setNav(false)}
-                  className='py-4 font-sometype-mono text-sm'
-                >
-                  Contact
-                </li>
-              </Link>
+              ))}
             </ul>
+
             <div className='pt-20'>
               <p className='py-4 font-sometype-mono text-sm'>
                 LET&apos;S CONNECT!
               </p>
               <div className='my-4 flex w-full items-center justify-between sm:w-[80%]'>
                 <a
-                  href='linkedin.in/mikeechong'
+                  href='https://linkedin.com/in/mikeechong'
                   target='_blank'
-                  title='Linkedin'
                   rel='noreferrer noopener'
+                  title='LinkedIn'
+                  className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'
                 >
-                  <div className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'>
-                    <FaLinkedinIn />
-                  </div>
+                  <FaLinkedinIn />
                 </a>
                 <a
                   href='https://github.com/mikeeech'
                   target='_blank'
-                  title='GitHub'
                   rel='noreferrer noopener'
+                  title='GitHub'
+                  className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'
                 >
-                  <div className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'>
-                    <FaGithub />
-                  </div>
+                  <FaGithub />
                 </a>
                 <a
                   href='mailto:hello@mikee-chong.com'
                   target='_blank'
-                  title='GitHub'
-                  rel='noreferrer noopener'
+                  rel='noreferrer'
+                  title='Email'
+                  className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'
                 >
-                  <div className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'>
-                    <AiOutlineMail />
-                  </div>
+                  <AiOutlineMail />
                 </a>
-                <div className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'>
+                <div
+                  className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'
+                  title='Resume'
+                >
                   <BsFillPersonLinesFill />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
