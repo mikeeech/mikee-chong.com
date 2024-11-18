@@ -93,7 +93,7 @@ const Skills = () => {
   return (
     <div
       id='skills'
-      className='flex mx-auto flex-col justify-center px-20 py-10'
+      className='mx-auto flex flex-col justify-center px-20 py-10'
     >
       <Heading title='Skills' />
       {renderSkills('Cloud', cloudSkills)}

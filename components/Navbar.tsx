@@ -18,7 +18,10 @@ const Navbar = () => {
       }
     };
     window.addEventListener('scroll', handleShadow);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleShadow);
+    };
+  }, [window]);
   const handleNav = () => {
     setNav(!nav);
   };
@@ -27,35 +30,33 @@ const Navbar = () => {
     <div
       className={
         shadow
-          ? 'fixed w-full shadow-xl h-20 z-[100] bg-[#FFEA75]'
-          : 'fixed w-full h-20 z-[100] bg-[#FFEA75]'
+          ? 'fixed z-[100] h-20 w-full bg-[#FFEA75] shadow-xl'
+          : 'fixed z-[100] h-20 w-full bg-[#FFEA75]'
       }
     >
-      <div className='flex justify-between items-center w-full h-full ml-5 px-2 2xl:px16'>
-      <h2>
-        <Link href="/">
-          mikee-chong
-        </Link>
-      </h2>
+      <div className='2xl:px16 ml-5 flex h-full w-full items-center justify-between px-2'>
+        <h2>
+          <Link href='/'>mikee-chong</Link>
+        </h2>
         <div>
-          <ul className='hidden md:flex font-sometype-mono mr-5'>
-            <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
+          <ul className='mr-5 hidden font-sometype-mono md:flex'>
+            <li className='ml-10 border-[#86305a] text-sm uppercase hover:border-b'>
               <Link href='/'>Home</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
+            <li className='ml-10 border-[#86305a] text-sm uppercase hover:border-b'>
               <Link href='/about'>About</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
+            <li className='ml-10 border-[#86305a] text-sm uppercase hover:border-b'>
               <Link href='/projects'>Projects</Link>
             </li>
-            <li className='ml-10 text-sm uppercase hover:border-b border-[#86305a]'>
+            <li className='ml-10 border-[#86305a] text-sm uppercase hover:border-b'>
               <Link href='/research'>Research</Link>
             </li>
-            <li className='ml-10 mr-5 text-sm uppercase hover:border-b border-[#86305a]'>
+            <li className='ml-10 mr-5 border-[#86305a] text-sm uppercase hover:border-b'>
               <Link href='/contact'>Contact</Link>
             </li>
           </ul>
-          <div onClick={handleNav} className='md:hidden pr-10'>
+          <div onClick={handleNav} className='pr-10 md:hidden'>
             <AiOutlineMenu size={25} />
           </div>
         </div>
@@ -63,14 +64,14 @@ const Navbar = () => {
 
       <div
         className={
-          nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''
+          nav ? 'fixed left-0 top-0 h-screen w-full bg-black/70 md:hidden' : ''
         }
       >
         <div
           className={
             nav
-              ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md-w[45%] h-screen bg-[#FFEA75] p-10 ease-in duration-500'
-              : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
+              ? 'md-w[45%] fixed left-0 top-0 h-screen w-[75%] bg-[#FFEA75] p-10 duration-500 ease-in sm:w-[60%]'
+              : 'fixed left-[-100%] top-0 p-10 duration-500 ease-in'
           }
         >
           <div>
@@ -78,19 +79,19 @@ const Navbar = () => {
               <h2>mikee-chong</h2>
               <div
                 onClick={handleNav}
-                className='rounded-full shadow-lg p-3 cursor-pointer'
+                className='cursor-pointer rounded-full p-3 shadow-lg'
               >
                 <AiOutlineClose />
               </div>
             </div>
-            <div className='pt-5 border-b border-[#86305a] my-4'></div>
+            <div className='my-4 border-b border-[#86305a] pt-5'></div>
           </div>
-          <div className='py-4 flex flex-col'>
+          <div className='flex flex-col py-4'>
             <ul className='uppercase'>
               <Link href='/'>
                 <li
                   onClick={() => setNav(false)}
-                  className='py-4 text-sm font-sometype-mono'
+                  className='py-4 font-sometype-mono text-sm'
                 >
                   Home
                 </li>
@@ -98,7 +99,7 @@ const Navbar = () => {
               <Link href='/about'>
                 <li
                   onClick={() => setNav(false)}
-                  className='py-4 text-sm font-sometype-mono'
+                  className='py-4 font-sometype-mono text-sm'
                 >
                   About
                 </li>
@@ -106,7 +107,7 @@ const Navbar = () => {
               <Link href='/projects'>
                 <li
                   onClick={() => setNav(false)}
-                  className='py-4 text-sm font-sometype-mono'
+                  className='py-4 font-sometype-mono text-sm'
                 >
                   Projects
                 </li>
@@ -114,7 +115,7 @@ const Navbar = () => {
               <Link href='/research'>
                 <li
                   onClick={() => setNav(false)}
-                  className='py-4 text-sm font-sometype-mono'
+                  className='py-4 font-sometype-mono text-sm'
                 >
                   Research
                 </li>
@@ -122,24 +123,24 @@ const Navbar = () => {
               <Link href='/contact'>
                 <li
                   onClick={() => setNav(false)}
-                  className='py-4 text-sm font-sometype-mono'
+                  className='py-4 font-sometype-mono text-sm'
                 >
                   Contact
                 </li>
               </Link>
             </ul>
             <div className='pt-20'>
-              <p className='py-4 text-sm font-sometype-mono'>
+              <p className='py-4 font-sometype-mono text-sm'>
                 LET&apos;S CONNECT!
               </p>
-              <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
+              <div className='my-4 flex w-full items-center justify-between sm:w-[80%]'>
                 <a
                   href='linkedin.in/mikeechong'
                   target='_blank'
                   title='Linkedin'
                   rel='noreferrer noopener'
                 >
-                  <div className='rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                  <div className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'>
                     <FaLinkedinIn />
                   </div>
                 </a>
@@ -149,7 +150,7 @@ const Navbar = () => {
                   title='GitHub'
                   rel='noreferrer noopener'
                 >
-                  <div className='rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                  <div className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'>
                     <FaGithub />
                   </div>
                 </a>
@@ -159,11 +160,11 @@ const Navbar = () => {
                   title='GitHub'
                   rel='noreferrer noopener'
                 >
-                  <div className='rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                  <div className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'>
                     <AiOutlineMail />
                   </div>
                 </a>
-                <div className='rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                <div className='cursor-pointer rounded-full p-3 shadow-lg duration-300 ease-in hover:scale-105'>
                   <BsFillPersonLinesFill />
                 </div>
               </div>

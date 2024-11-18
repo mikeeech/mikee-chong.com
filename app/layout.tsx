@@ -30,11 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className='h-screen flex flex-col overflow-hidden'>
+      <body className='flex h-screen flex-col overflow-hidden'>
         <Navbar />
-        <main className='flex-1 overflow-y-auto'>
-          {children}
-        </main>
+        <main className='flex-1 overflow-y-auto'>{children}</main>
         <Footer />
       </body>
     </html>
