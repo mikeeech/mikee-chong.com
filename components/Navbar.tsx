@@ -45,7 +45,7 @@ const Navbar = () => {
         </h2>
         <div>
           {/* desktop navbar */}
-          <ul className='mr-5 hidden font-sometype-mono md:flex'>
+          <ul className='mr-10 hidden font-sometype-mono md:flex'>
             {navLinks.map((link) => (
               <li
                 key={link.href}
