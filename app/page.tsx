@@ -2,6 +2,7 @@ import Markdown from '@/components/Markdown';
 import Image from 'next/image';
 import fs from 'fs';
 import path from 'path';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Home() {
   const markdownPath = path.join(process.cwd(), '/content/maintext.md');

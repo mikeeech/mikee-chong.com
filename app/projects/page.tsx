@@ -1,4 +1,5 @@
 import Heading from '@/components/Heading';
+import ProjectItem from '@/components/ProjectItem';
 // import ProjectItem from '@/components/ProjectItem';
 
 const Projects = () => {
@@ -9,21 +10,21 @@ const Projects = () => {
     >
       {/* <div className='max-w-[1240px] mx- py-16 px-20'> */}
       <div className='text-center'>
-        <Heading title='Projects: STAY TUNED FOR MORE!' />
-        {/* <div className='grid md:grid-cols-2 gap-8'>
+        {/* <Heading title='Projects: STAY TUNED FOR MORE!' /> */}
+        <div className='grid gap-8 md:grid-cols-2'>
           <ProjectItem
-            title='Property Finder'
-            backgroundImg='/'
-            projectUrl='/property'
+            title='CircleBe'
+            backgroundImg='/projectImgs/circlebe.png'
+            projectUrl='/circlebe'
             tech='React JS'
           />
           <ProjectItem
             title='Property Finder'
-            backgroundImg='/'
+            backgroundImg='/projectImgs/circlebe.png'
             projectUrl='/property'
             tech='React JS'
           />
-        </div> */}
+        </div>
       </div>
     </div>
   );

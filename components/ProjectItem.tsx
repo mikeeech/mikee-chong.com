@@ -15,15 +15,21 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   projectUrl,
 }) => {
   return (
-    <div className='relative-flex items-center justify-center h-auto w-full shadow-xl rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]'>
-      <Image className='rounded-xl group-hover:opacity-10' src='' alt='/' />
-      <div className='hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[50%] translate-y-[50%]'>
-        <h3 className='text-2xl text-white tracking-wider text-center'>
+    <div className='relative-flex group h-auto w-full items-center justify-center rounded-xl from-[#FFFFFF] to-[#FFFFFF] p-4 shadow-xl hover:bg-gradient-to-r'>
+      <Image
+        className='rounded-xl group-hover:opacity-10'
+        src={backgroundImg}
+        width={500}
+        height={300}
+        alt='/'
+      />
+      <div className='absolute left-[50%] top-[50%] hidden translate-x-[50%] translate-y-[50%] group-hover:block'>
+        <h3 className='text-center text-2xl tracking-wider text-white'>
           {title}
         </h3>
-        <p className='pb-4 pt-2 text-white text-center'>{tech}</p>
+        <p className='pb-4 pt-2 text-center text-white'>{tech}</p>
         <Link href={projectUrl}>
-          <p className='text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer'>
+          <p className='cursor-pointer rounded-lg bg-white py-3 text-center text-lg font-bold text-gray-700'>
             More Info
           </p>
         </Link>

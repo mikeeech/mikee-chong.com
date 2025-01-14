@@ -8,7 +8,7 @@ const About = () => {
   const markdown = fs.readFileSync(markdownPath, 'utf-8');
 
   return (
-    <div className='flex w-full items-center px-14 pb-10 pt-28 md:pb-0'>
+    <div className='flex w-full items-center px-14 pb-10 pt-28 md:px-60 md:pb-0'>
       <div className='md:pr-5'>
         <Markdown content={markdown} />
       </div>
