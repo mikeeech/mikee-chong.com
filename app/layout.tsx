@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className='flex h-screen flex-col overflow-hidden'>
         <Navbar />
         <main className='flex-1 overflow-y-auto'>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

@@ -20,7 +20,7 @@ export default function Home() {
             className='border-50 rounded-full'
           />
         </div>
-        <div className='pl-[13%] pr-[7%] text-left'>
+        <div className='pl-[18%] pr-[7%] text-left'>
           <Markdown content={markdown} />
         </div>
       </div>

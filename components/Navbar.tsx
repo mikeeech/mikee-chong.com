@@ -30,7 +30,7 @@ const Navbar = () => {
     // { href: '/projects', label: 'Projects' },
     // { href: '/research', label: 'Research' },
     // { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Contact' },
+    // { href: '/contact', label: 'Contact' },
   ];
 
   return (
