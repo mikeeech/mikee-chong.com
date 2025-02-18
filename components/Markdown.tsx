@@ -18,6 +18,13 @@ export default function Markdown({ content }: { content: string }) {
           },
         ],
       ]}
+      components={{
+        a: ({ node, ...props }) => (
+          <a {...props} target='_blank' rel='noopener noreferrer'>
+            {props.children}
+          </a>
+        ),
+      }}
     >
       {content}
     </ReactMarkdown>
