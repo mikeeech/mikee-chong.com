@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+// import Footer from '@/components/Footer';
 import './global.css';
 
 export const metadata: Metadata = {
@@ -31,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className='flex h-screen flex-col overflow-hidden'>
-        <Navbar />
-        <main className='flex-1 overflow-y-auto'>{children}</main>
-        {/* <Footer /> */}
+        <div>
+          <Navbar />
+          <main className='flex-1 overflow-y-auto'>{children}</main>
+          {/* <Footer /> */}
+        </div>
       </body>
     </html>
   );

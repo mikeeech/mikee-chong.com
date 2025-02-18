@@ -1,4 +1,6 @@
 import { getBlogLinksMetadata, getBlogPostBySlug } from '@/lib/blog';
+import { openGraphDefaults, otherDefaults } from '@/lib/metadata';
+import { Metadata, ResolvingMetadata } from 'next';
 import Footer from '@/components/Footer';
 import Markdown from '@/components/Markdown';
 import dayjs from 'dayjs';
@@ -14,12 +16,43 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params;
+  const { metadata } = await getBlogPostBySlug(slug);
+
+  const title = `${metadata.title} - Mikee Chong`;
+  return {
+    title: title,
+    description: metadata.excerpt,
+    openGraph: {
+      ...openGraphDefaults,
+      title: title,
+      description: metadata.excerpt,
+      type: 'article',
+      authors: ['Mikee Chong'],
+    },
+    other: {
+      ...otherDefaults,
+      'article:published_time': dayjs(metadata.created).toISOString(),
+      'article:modified_time': dayjs(metadata.updated).toISOString(),
+    },
+  };
+}
+
 function toDateString(date: Date) {
   return dayjs(date).format('ddd, MMM D, YYYY');
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { metadata, content } = await getBlogPostBySlug(params.slug);
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const { metadata, content } = await getBlogPostBySlug(slug);
 
   const inlineCodeClasses = [
     '[&_:not(pre)>code]:rounded-lg',

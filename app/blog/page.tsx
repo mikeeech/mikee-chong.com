@@ -1,7 +1,17 @@
 import { BlogMetadata, getBlogLinksMetadata } from '@/lib/blog';
-import { IoMdOpen } from 'react-icons/io';
+import { openGraphDefaults } from '@/lib/metadata';
 import dayjs from 'dayjs';
+import { Metadata } from 'next';
 import Link from 'next/link';
+import { IoMdOpen } from 'react-icons/io';
+
+export const metadata: Metadata = {
+  title: 'Blog - Mikee Chong',
+  openGraph: {
+    ...openGraphDefaults,
+    title: 'Blog - Mikee Chong',
+  },
+};
 
 function toDateString(date: Date) {
   return dayjs(date).format('MMM YYYY');
