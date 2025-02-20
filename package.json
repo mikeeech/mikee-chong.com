@@ -10,15 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "^15.0.3",
-    "@typescript-eslint/eslint-plugin": "^8.14.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
-    "dompurify": "^3.1.2",
-    "eslint-import-resolver-node": "^0.3.9",
-    "eslint-import-resolver-typescript": "^3.6.3",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react-hooks": "^5.0.0",
     "glob": "^11.0.1",
     "gray-matter": "^4.0.3",
     "next": "^15.2.0-canary.6",
@@ -31,23 +24,14 @@
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^4.0.0",
     "remark-toc": "^9.0.0",
-    "sharp": "^0.33.5",
-    "vue-eslint-parser": "^8.3.0"
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@typescript-eslint/parser": "^8.14.0",
-    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.3",
     "eslint-config-prettier": "^9.1.0",
-    "pnpm": "^9.0.6",
-    "postcss": "^8.4.47",
-    "prettier": "^3.3.3",
-    "prettier-eslint": "^16.3.0",
-    "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.14",
     "typescript": "^5.3.3"
   },

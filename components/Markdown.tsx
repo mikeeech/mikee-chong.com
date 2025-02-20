@@ -19,11 +19,20 @@ export default function Markdown({ content }: { content: string }) {
         ],
       ]}
       components={{
-        a: ({ node, ...props }) => (
-          <a {...props} target='_blank' rel='noopener noreferrer'>
-            {props.children}
-          </a>
-        ),
+        a: ({ node, href, ...props }) => {
+          const isDeepLink = href?.startsWith('http') || href?.startsWith('//');
+
+          return (
+            <a
+              {...props}
+              href={href}
+              target={isDeepLink ? '_blank' : undefined}
+              rel={isDeepLink ? 'noopener noreferrer' : undefined}
+            >
+              {props.children}
+            </a>
+          );
+        },
       }}
     >
       {content}

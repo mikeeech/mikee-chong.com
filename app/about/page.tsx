@@ -1,5 +1,4 @@
 import path from 'path';
-import Image from 'next/image';
 import fs from 'fs';
 import Markdown from '@/components/Markdown';
 
@@ -8,19 +7,10 @@ const About = () => {
   const markdown = fs.readFileSync(markdownPath, 'utf-8');
 
   return (
-    <div className='flex w-full items-center px-14 pb-10 pt-28 md:px-96 md:pt-28'>
-      <div className='md:pr-5'>
+    <div className='flex min-h-[calc(100vh-5rem)] w-full items-center px-4 py-8 sm:px-8 md:px-12 lg:px-24 xl:px-48 2xl:px-64'>
+      <div className='mx-auto max-w-4xl'>
         <Markdown content={markdown} />
       </div>
-      {/* <div className='m-auto hidden h-auto w-full items-center justify-center rounded-xl px-5 pt-10 md:flex'>
-        <Image
-          className='min-h-[400px] min-w-[300px] rounded-xl'
-          src='/assets/about.jpg'
-          width={300}
-          height={500}
-          alt='/'
-        />
-      </div> */}
     </div>
   );
 };

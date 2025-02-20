@@ -27,10 +27,8 @@ const Navbar = () => {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    // { href: '/projects', label: 'Projects' },
-    // { href: '/research', label: 'Research' },
     // { href: '/blog', label: 'Blog' },
-    // { href: '/contact', label: 'Contact' },
+    { href: 'mailto:hello@mikee-chong.com', label: 'Contact' },
   ];
 
   return (
@@ -98,9 +96,9 @@ const Navbar = () => {
             </ul>
 
             <div className='pt-20'>
-              <p className='py-4 font-sometype-mono text-sm'>
+              <h3 className='py-4 font-sometype-mono text-sm'>
                 LET&apos;S CONNECT!
-              </p>
+              </h3>
               <div className='my-4 flex w-full items-center justify-between sm:w-[80%]'>
                 <a
                   href='https://linkedin.com/in/mikeechong'
