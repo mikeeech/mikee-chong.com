@@ -1,14 +1,14 @@
 export default function Footer() {
   return (
-    <div className='flex items-center justify-center px-10 py-3 text-black'>
-      <p className='text-[8px] text-black'>
-        Built from scratch using Next.js and Tailwind CSS. {''}
-        Check out the source code on {''}
+    <div className="flex justify-center py-3">
+      <p className="text-center text-[8px]">
+        Built from scratch using Next.js and Tailwind CSS.{''}
+        Check out the source code on{' '}
         <a
-          target='_blank'
-          className='underline hover:text-black'
-          href='https://github.com/mikeeech/mikee-chong.com'
-          rel='noreferrer noopener'
+          href="https://github.com/mikeeech/mikee-chong.com"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="underline hover:text-black"
         >
           GitHub
         </a>

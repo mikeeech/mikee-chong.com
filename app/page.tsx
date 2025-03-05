@@ -8,9 +8,9 @@ export default function Home() {
   const markdown = fs.readFileSync(markdownPath, 'utf-8');
 
   return (
-    <div className='relative z-0 mx-auto flex h-fit max-w-screen-sm items-center justify-center py-10'>
+    <div className='relative z-0 mx-auto flex h-fit max-w-screen-sm items-center justify-center'>
       <div className='flex w-full max-w-[1240px] flex-col items-center'>
-        <div className='flex justify-center py-16'>
+        <div className='flex justify-center py-14'>
           <Image
             src='/assets/profile.jpg'
             alt='Main Photo'
